@@ -1,1 +1,25 @@
-
+ vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int>v;
+        if(nums.size()==0)
+        {
+            return v;
+        }
+        int low = 0;
+        int s = nums.size();
+        cout<<s;
+        int high = n;
+        while(low<n&&high<s)
+        {
+            v.push_back(nums[low++]);
+            v.push_back(nums[high++]);
+        }
+        while(low<n)
+        {
+            v.push_back(nums[low++]);
+        }
+        while(high<s)
+        {
+            v.push_back(nums[high++]);
+        }
+        return v;
+    }
