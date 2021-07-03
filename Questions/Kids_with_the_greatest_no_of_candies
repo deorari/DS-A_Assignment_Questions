@@ -1,1 +1,18 @@
-
+  vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector<bool>v;
+        int max1 = *max_element(candies.begin(),candies.end());
+        //cout<<" "<<max1;
+        for(int i=0;i<candies.size();i++)
+        {
+            candies[i] = candies[i]+extraCandies;
+            if(candies[i]>=max1)
+            {
+                v.push_back(true);
+            }
+            else
+            {
+                v.push_back(false);
+            }
+        }
+        return v;
+    }
