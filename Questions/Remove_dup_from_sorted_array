@@ -1,0 +1,17 @@
+int removeDuplicates(vector<int>& nums) {
+       int x=0,y=0;
+       if(nums.size()==0)
+       {
+            return 0;
+       }
+       for(int i=y;i<nums.size();)
+       {
+           if(nums[x]!=nums[i])
+           {
+               x++;
+               nums[x]=nums[i];
+           }
+           i++;
+       }
+        return x+1;
+    }
