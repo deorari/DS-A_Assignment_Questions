@@ -1,1 +1,20 @@
-
+ic:
+    int removeElement(vector<int>& nums, int val) {
+      int x = nums.size(),pos,c=0;
+      sort(nums.begin(),nums.end());
+      auto index = find(nums.begin(),nums.end(),val);
+      if(index!=nums.end())
+      {
+          pos = index-nums.begin();
+      }
+      for(int i=0;i<nums.size();i++)
+      {
+          if(nums[i]==val)
+          {
+              c++;
+          }
+      }
+      nums.erase(nums.begin()+pos,nums.begin()+pos+c);
+      int final_size = nums.size();
+      return final_size;
+    }
