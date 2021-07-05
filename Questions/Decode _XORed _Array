@@ -1,1 +1,12 @@
-
+vector<int> decode(vector<int>& encoded, int first) {
+        vector<int>v;
+        encoded[0]=encoded[0]^first;
+        v.push_back(first);
+        v.push_back(encoded[0]);
+        for(int i=1;i<encoded.size();i++)
+        {
+            encoded[i]=encoded[i]^encoded[i-1];
+            v.push_back(encoded[i]);
+        }
+        return v;
+    }
