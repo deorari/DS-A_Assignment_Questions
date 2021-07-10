@@ -38,3 +38,36 @@ public:
         return res;
     }
 };
+
+
+
+SECOND APPROACH :
+
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& str) {
+        string res="";
+        int y=0;
+        int x = str.size();
+        if(x==0)
+        {
+            return res;
+        }
+        if(x==1)
+        {
+            return str[0];
+        }
+        while(true)
+        {
+        for(int i=0;i<x-1;i++)
+        {
+            if(str[i].size()==y ||str[i][y]!=str[i+1][y])
+            {
+                return res;
+            }
+        }
+            res = res + str[0][y];
+            y++;
+        }
+    }
+};
