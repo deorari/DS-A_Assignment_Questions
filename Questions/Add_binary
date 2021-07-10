@@ -1,0 +1,30 @@
+class Solution {
+public:
+    string addBinary(string a, string b) {
+         
+        int x = a.length();
+        int y = b.length();
+        string res="";
+        int i=0,sum=0,c=0;
+        reverse(a.begin(),a.end());
+        reverse(b.begin(),b.end());
+        while(i<x||i<y||c!=0)
+        {
+            sum = 0;
+            if(i<x)
+            {
+            sum = sum + (a[i]-48);}
+            if(i<y)
+            {
+            sum = sum + (b[i]-48);
+            }
+            sum = sum + c;
+            int ans  = sum%2;
+            res = res + to_string(ans);
+            c = sum/2;
+            i++;
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
+};
