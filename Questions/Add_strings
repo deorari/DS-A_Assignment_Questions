@@ -1,0 +1,39 @@
+class Solution {
+public:
+    string addStrings(string num1, string num2) {
+        
+        reverse(num1.begin(),num1.end());
+        reverse(num2.begin(),num2.end());
+        int sum=0,c=0,i=0;
+        int x = num1.length();
+        int y = num2.length();
+        string res="";
+        while(i<x||i<y||c!=0)
+        {
+            sum=0;
+            if(i<x)
+            {
+                sum = sum + num1[i]-48;
+            }
+            if(i<y) 
+            {
+                sum = sum + num2[i]-48;
+            }
+            sum = sum + c;
+            if(sum<=9)
+            {
+                res = res + to_string(sum);
+                c=0;
+            }
+            else
+            {
+                int sum1 = sum%10;
+                res = res + to_string(sum1);
+                c = sum/10;
+            }
+            i++;
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
+};
