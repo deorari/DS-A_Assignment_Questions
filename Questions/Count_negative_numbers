@@ -1,0 +1,44 @@
+Approach 1:
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& grid) {
+        int sum=0;
+        for(int i=0;i<grid.size();i++)
+        {
+           for(int j=0;j<grid[0].size();j++)
+           {
+               if(grid[i][j]<0)
+               {
+                   sum++;
+               }
+           }
+        }
+        return sum;
+    }
+};
+
+Approach 2:
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& grid) {
+        
+        int r = grid.size();
+        int m = grid[0].size();
+        int n = r-1,c=0,count=0;
+        while(n>=0&&c<m)
+        {
+            if(grid[n][c]<0)
+            {
+                n--;
+                count  = count+m-c;
+            }
+            else
+            {
+              c++;
+            }
+        }
+        return count;
+    }
+};
