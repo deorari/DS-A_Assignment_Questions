@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string truncateSentence(string s, int k) {
+        string word="";
+        string res="";
+        stringstream ss(s);
+        int i=0;
+        while(ss>>word)
+        {
+            res = res + word;
+            i++;
+            if(i==k)
+            {
+                break;
+            }
+            res = res +" ";
+        }
+        
+        return res;
+    }
+};
