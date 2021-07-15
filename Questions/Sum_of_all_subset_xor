@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int subset(vector<int>& nums, int in, int sum)
+    {
+        if(in==nums.size())
+        {
+            return sum;
+        }
+        int with = subset(nums,in+1,sum^nums[in]);
+        int without = subset(nums,in+1,sum);
+        return with+without;
+    }
+    int subsetXORSum(vector<int>& nums) {
+       int in=0,sum=0;
+       int res = subset(nums,in,sum);
+       return res;
+    }
+};
